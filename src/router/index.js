@@ -18,6 +18,24 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/firebase-test",
+    name: "firebase_test",
+    component: () =>
+      import(/* webpackChunkName: "firebasetest" */ "../views/FirebaseTest.vue")
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () =>
+      import(/* webpackChunkName: "firebasetest" */ "../views/Login.vue")
+  },
+  {
+    path: "/sign-up",
+    name: "sign_up",
+    component: () =>
+      import(/* webpackChunkName: "firebasetest" */ "../views/SignUp.vue")
   }
 ];
 
