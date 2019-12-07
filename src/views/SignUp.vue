@@ -5,7 +5,7 @@
     <br />
     <input type="password" placeholder="Password" v-model="password" />
     <br />
-    <button class="button" @click="registerWithEmailAndPassword">Go</button>
+    <button class="button" @click="m_registerWithEmailAndPassword">Go</button>
     <p>
       Already have an account login
       <router-link to="/login">HERE</router-link>!
@@ -21,20 +21,21 @@ export default {
   data() {
     return {
       email: "",
-      password: "",
-      err: ""
+      password: ""
     };
   },
   methods: {
-    registerWithEmailAndPassword() {
+    m_registerWithEmailAndPassword() {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
-          function(user) {
+          // Success
+          user => {
             alert(`Your account has been created ${user}`);
           },
-          function(err) {
+          // Failer
+          err => {
             alert(`Oops! Something went wrong. ${err.message}`);
           }
         );
