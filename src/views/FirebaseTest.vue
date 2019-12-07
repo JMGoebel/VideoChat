@@ -24,13 +24,14 @@
 
 <script>
 import { firebaseConfig } from "@/secure/firebase.js";
+import firebase from "firebase";
 
 export default {
   name: "firebase-testing",
   data() {
     return {
       hasSecrets: firebaseConfig !== null,
-      hasRead: false,
+      hasRead: firebase.auth().currentUser !== null,
       hasWrite: false,
       hasAccess: false
     };
