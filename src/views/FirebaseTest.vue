@@ -2,24 +2,38 @@
   <div class="firebase-test">
     <h1>Firebase Testing</h1>
     <ul class="status-list">
-      <li>Firebase Credentials Found: <span class="fail" :class="{ pass: hasSecrets }">{{ hasSecrets }}</span></li>
-      <li>Has Firebase Access: <span class="fail" :class="{ pass: hasAccess }">{{ hasAccess }}</span></li>
-      <li>Writes to database: <span class="fail" :class="{ pass: hasRead }">{{ hasRead }}</span></li>
-      <li>Reads from database: <span class="fail" :class="{ pass: hasWrite }">{{ hasWrite }}</span></li>
+      <li>
+        Firebase Credentials Found:
+        <span class="fail" :class="{ pass: hasSecrets }">{{ hasSecrets }}</span>
+      </li>
+      <li>
+        Has Firebase Access:
+        <span class="fail" :class="{ pass: hasAccess }">{{ hasAccess }}</span>
+      </li>
+      <li>
+        Writes to database:
+        <span class="fail" :class="{ pass: hasRead }">{{ hasRead }}</span>
+      </li>
+      <li>
+        Reads from database:
+        <span class="fail" :class="{ pass: hasWrite }">{{ hasWrite }}</span>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { firebaseConfig } from "@/secure/firebase.js";
+
 export default {
   name: "firebase-testing",
   data() {
     return {
-      hasSecrets: false,
+      hasSecrets: firebaseConfig !== null,
       hasRead: false,
       hasWrite: false,
-      hasAccess: false,
-    }
+      hasAccess: false
+    };
   }
 };
 </script>
@@ -41,8 +55,10 @@ export default {
 .fail {
   color: red;
   font-weight: bold;
+  text-transform: uppercase;
 }
 .pass {
+  text-transform: uppercase;
   color: green;
 }
 </style>

@@ -23,5 +23,5 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# Firebase Secret Credentials
-*.secret
+# Secret Credentials
+secure
