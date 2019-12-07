@@ -15,7 +15,6 @@
 
 <script>
 import firebase from "firebase";
-import router from "@/router";
 
 export default {
   name: "login",
@@ -34,7 +33,7 @@ export default {
         .then(
           // Success
           () => {
-            router.replace("/dashboard");
+            this.$router.replace("/dashboard");
           },
           // Failer
           err => {
