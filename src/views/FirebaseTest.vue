@@ -31,9 +31,9 @@ export default {
   data() {
     return {
       hasSecrets: firebaseConfig !== null,
-      hasRead: firebase.auth().currentUser !== null,
+      hasRead: false,
       hasWrite: false,
-      hasAccess: false
+      hasAccess: firebase.auth().currentUser !== null
     };
   }
 };

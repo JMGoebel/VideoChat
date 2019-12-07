@@ -15,6 +15,7 @@
 
 <script>
 import firebase from "firebase";
+import router from "@/router";
 
 export default {
   name: "sign-up",
@@ -31,8 +32,8 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           // Success
-          user => {
-            alert(`Your account has been created ${user}`);
+          () => {
+            router.replace("/dashboard");
           },
           // Failer
           err => {

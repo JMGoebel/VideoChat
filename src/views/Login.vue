@@ -15,6 +15,7 @@
 
 <script>
 import firebase from "firebase";
+import router from "@/router";
 
 export default {
   name: "login",
@@ -32,9 +33,8 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(
           // Success
-          user => {
-            alert(`Hello user ${user}`);
-            this.authorisedUser = user;
+          () => {
+            router.replace("/dashboard");
           },
           // Failer
           err => {
