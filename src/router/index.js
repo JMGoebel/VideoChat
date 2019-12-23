@@ -7,18 +7,24 @@ import About from "@/views/About.vue";
 import SignUp from "@/views/SignUp.vue";
 import Dashboard from "@/views/Dashboard.vue";
 import FirebaseTest from "@/views/FirebaseTest.vue";
+import Landing from "@/views/Landing.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "*",
-    redirect: "/login"
+    redirect: "/landing"
   },
   {
     path: "/",
     name: "home",
     component: Home
+  },
+  {
+    path: "/landing",
+    name: "Landing",
+    component: Landing
   },
   {
     path: "/about",
