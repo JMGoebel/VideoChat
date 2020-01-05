@@ -1,13 +1,13 @@
 import Vue from "vue";
 import firebase from "firebase";
 import VueRouter from "vue-router";
-import Home from "@/views/Home.vue";
-import Login from "@/views/Login.vue";
+
+// Views
 import About from "@/views/About.vue";
-import SignUp from "@/views/SignUp.vue";
 import Dashboard from "@/views/Dashboard.vue";
-import FirebaseTest from "@/views/FirebaseTest.vue";
 import Landing from "@/views/Landing.vue";
+import Login from "@/views/Login.vue"; // Remove and turn into component
+import SignUp from "@/views/SignUp.vue"; // Revome and turn into component
 
 Vue.use(VueRouter);
 
@@ -17,13 +17,8 @@ const routes = [
     redirect: "/landing"
   },
   {
-    path: "/",
-    name: "home",
-    component: Home
-  },
-  {
     path: "/landing",
-    name: "Landing",
+    name: "landing",
     component: Landing
   },
   {
@@ -48,14 +43,6 @@ const routes = [
     path: "/dashboard",
     name: "dashboard",
     component: Dashboard,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/firebase-test",
-    name: "firebase_test",
-    component: FirebaseTest,
     meta: {
       requiresAuth: true
     }
