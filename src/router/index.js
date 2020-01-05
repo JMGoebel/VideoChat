@@ -6,7 +6,6 @@ import VueRouter from "vue-router";
 import About from "@/views/About.vue";
 import Dashboard from "@/views/Dashboard.vue";
 import Landing from "@/views/Landing.vue";
-import Login from "@/views/Login.vue"; // Remove and turn into component
 import SignUp from "@/views/SignUp.vue"; // Revome and turn into component
 
 Vue.use(VueRouter);
@@ -28,11 +27,6 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: About
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: Login
   },
   {
     path: "/sign-up",
